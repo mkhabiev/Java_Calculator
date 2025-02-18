@@ -89,8 +89,13 @@ public class MainActivity extends AppCompatActivity {
                 result = secondValue != 0 ? firstValue / secondValue : 0;
                 break;
         }
+        // Проверяем, является ли число целым
+        if (result == (int) result) {
+            resultView.setText(String.valueOf((int) result)); // Выводим как int
+        } else {
+            resultView.setText(String.valueOf(result)); // Выводим как double
+        }
 
-        resultView.setText(String.valueOf(result));
         currentInput = String.valueOf(result);
         isNewOperation = true;
     }
